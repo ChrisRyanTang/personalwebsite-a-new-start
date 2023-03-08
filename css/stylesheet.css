@@ -1,0 +1,89 @@
+/****Everything*****/
+body {
+    background-color: lavenderblush;
+    background-color: #DFBEEF;
+}
+
+footer {
+    text-align: center;
+}
+
+/***index.html******/
+h1 {
+    color: #024750;
+    font-family: 'Montserrat', sans-serif;  
+}
+
+.shoulders {
+    background-color: lightsalmon;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#identity {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.p1 {
+    grid-column: 1/2;
+}
+
+
+/* *************************************************** Courses********************************************* */
+
+.courses_header, footer{
+    background-color: lightsalmon;
+    text-align: center;
+}
+
+.nav_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.copy {
+    background-color: lightsalmon;
+}
+
+.course_sec {
+    border-bottom: solid lightslategray;
+}
+
+.course_sec:last-child {
+    border-bottom: none;
+}
+
+
+@media screen and (min-width: 600px) {
+
+    .nav_menu {
+        flex-direction: row;
+    }
+
+    .course_sec {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        border-bottom: solid black;
+    }
+    .course-year {
+        order: 3;
+    }
+}
+
+/* ***************************************************School*************************************************/
+
