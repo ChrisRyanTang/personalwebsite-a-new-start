@@ -1,6 +1,6 @@
 const courseList = [
     { code: "ACIT 1620", name: "Web Fundamental Technologies" },
-    { code: "COMM 1160", name: "Business Communications" },
+    { code: "COMM 1116", name: "Business Communications" },
     { code: "Math 1310", name: "Technical Math" },
   ];
   
@@ -13,19 +13,20 @@ const courseList = [
     }
   } while (user.length !== 4);
   
-  let course
+  let course = false;
   
-  for (let find of courseList) {
-    course = find["code"].search(user);
-    if (course > -1) {
-      alert(
-        `Yes I am taking the course: ` + " " + find["code"] + "-" + find["name"]
-      );
-      console.log("It works");
+  for (let i = 0; i < courseList.length; i++ ) {
+    if (courseList[i].code.includes(user)) {
+      alert(`Yes I am taking the course: ${courseList[i].code} - ${courseList[i].name}`);
+      course = true;
+      break;
     }
-  };
-  if (course < 0) {
-      courseList.push({code: user, name: "null"}); 
-  };
-  console.log("Issa success");
+  }
+
+  if (course === false) {
+    const newCourse = {code: `${user}`, name: null};
+    courseList.push(newCourse);
+    console.log(`Log success ${newCourse.code}`); 
+  }
+
   console.log(courseList);
