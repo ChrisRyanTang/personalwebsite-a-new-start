@@ -30,3 +30,15 @@ const courseList = [
   }
 
   console.log(courseList);
+
+
+
+function createCourseArray(){
+  const courseArray = [];
+  const courseElement = document.querySelectorAll('.course_sec')
+  for (let i = 0; i <= courseElement.length; i++); {
+    const courseName = courseElement[i].querySelectorAll('.course_name');
+    const courseDate = courseElement[i].querySelectorAll('.course_year');
+    const match = courseName.match()
+  }
+}
