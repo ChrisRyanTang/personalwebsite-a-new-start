@@ -33,12 +33,30 @@ const courseList = [
 
 
 
-function createCourseArray(){
+// function createCourseArray(){
+//   const courseArray = [];
+//   const courseElement = document.querySelectorAll('.course_name')
+//   for (let i = 0; i < courseElement.length; i++); {
+//     const courseName = courseElement[i].querySelectorAll('.course_name');
+//     const courseDate = courseElement[i].querySelectorAll('.course-year');
+//     const matchName = courseName.match([/ACIT/])
+//     const matchDate = courseDate.match()
+//     if (matchName && matchDate) {
+//       courseArray.push({'code': matchName, 'date': matchDate});
+//       return courseArray
+//     }
+//   }
+// }
+
+// console.log(createCourseArray())
+
+function createCourseArray() {
   const courseArray = [];
-  const courseElement = document.querySelectorAll('.course_sec')
-  for (let i = 0; i <= courseElement.length; i++); {
-    const courseName = courseElement[i].querySelectorAll('.course_name');
-    const courseDate = courseElement[i].querySelectorAll('.course_year');
-    const match = courseName.match()
-  }
+  const courseElement = document.getElementsByClassName('course_sec');
+  const courseName = document.getElementsByTagName('course_name');
+
+
+  return courseName;
 }
+
+console.log(createCourseArray())
