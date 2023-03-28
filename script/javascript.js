@@ -32,31 +32,25 @@ const courseList = [
   console.log(courseList);
 
 
+const courseSelect = document.querySelectorAll(".course_name");
 
-// function createCourseArray(){
-//   const courseArray = [];
-//   const courseElement = document.querySelectorAll('.course_name')
-//   for (let i = 0; i < courseElement.length; i++); {
-//     const courseName = courseElement[i].querySelectorAll('.course_name');
-//     const courseDate = courseElement[i].querySelectorAll('.course-year');
-//     const matchName = courseName.match([/ACIT/])
-//     const matchDate = courseDate.match()
-//     if (matchName && matchDate) {
-//       courseArray.push({'code': matchName, 'date': matchDate});
-//       return courseArray
-//     }
-//   }
-// }
-
-// console.log(createCourseArray())
-
-function createCourseArray() {
+function createCourseArray(){
   const courseArray = [];
-  const courseElement = document.getElementsByClassName('course_sec');
-  const courseName = document.getElementsByTagName('course_name');
-
-
-  return courseName;
+  for (let i = 0; i < courseSelect.length; i++); {
+    const nameSelect = courseSelect[i].querySelector(".course_name");
+    const dateSelect = courseSelect[i].querySelector(".course-year");
+    const matchName = nameSelect.textContent;
+    const matchDate = dateSelect.textContent;
+    if (matchName && matchDate) {
+      courseArray.push({'code': matchName, 'date': matchDate});
+      
+    }
+  }
 }
 
-console.log(createCourseArray())
+createCourseArray();
+
+
+function findCourse(courseList) {
+  
+}
