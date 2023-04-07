@@ -32,25 +32,58 @@ const courseList = [
   console.log(courseList);
 
 
-const courseSelect = document.querySelectorAll(".course_name");
+let programArray = [];
 
-function createCourseArray(){
-  const courseArray = [];
-  for (let i = 0; i < courseSelect.length; i++); {
-    const nameSelect = courseSelect[i].querySelector(".course_name");
-    const dateSelect = courseSelect[i].querySelector(".course-year");
-    const matchName = nameSelect.textContent;
-    const matchDate = dateSelect.textContent;
-    if (matchName && matchDate) {
-      courseArray.push({'code': matchName, 'date': matchDate});
-      
-    }
-  }
+function createCourseArray() {
+  const className = document.querySelector('.course_name');
+  const classYear = document.querySelector('.course-year');
+  let program = {
+    classN: className.textContent,
+    classY: classYear.textContent,
+  };
+  programArray.push(program);
+  console.log(programArray);
 }
 
-createCourseArray();
+const courseSections = document.querySelectorAll('.course_sec');
+courseSections.forEach(section => {
+  createCourseArray();
+});
+
+console.log(programArray);
 
 
 function findCourse(courseList) {
-  
+  let user;
+  do {
+    user = prompt("Enter a 4 digit number: ");
+    if (user.length !== 4 || isNaN(user)) {
+      alert("Invalid number or string");
+    }
+  } while (user.length !== 4);
+
+  for (let i = 0; i < courseList.length; i++) {
+    if (courseList[i].code.includes(user)) {
+      document.body.style.backgroundColor = "green";
+      return;
+    }
+  }
+
+  const newCourse = {
+    code: user,
+    name: "N/A",
+    year: "Fall 2020"
+  };
+  courseList.push(newCourse);
+  const main = document.querySelector('main');
+  const section = document.createElement('section');
+  section.classList.add('course_sec');
+  section.innerHTML = `
+    <p class="course_name"><a href="#">${newCourse.code} - ${newCourse.name}</a></p>
+    <p class="course-year">${newCourse.year}</p>
+    <p></p>
+  `;
+  main.appendChild(section);
 }
+
+findCourse(courseList);
